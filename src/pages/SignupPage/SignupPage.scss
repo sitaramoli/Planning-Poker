@@ -1,0 +1,40 @@
+.signup {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    background-color: #fff;
+    padding: 4rem 3rem;
+    border-radius: 0.8rem;
+    &__header {
+        text-align: center;
+        margin: 0 5rem;
+        &__title {
+            font-size: 2.4rem;
+            font-weight: 700;
+            color: #c57a5c;
+            margin-bottom: 1rem;
+        }
+        &__subtitle {
+            font-size: 1.4rem;
+            font-weight: 400;
+            color: rgba(55, 53, 53, 0.7);
+        }
+    }
+    &__form {
+        display: flex;
+        flex-direction: column;
+        gap: 2rem;
+    }
+    &__footer{
+        & span {
+            font-size: 1.4rem;
+            font-weight: 400;
+        }
+        &__login {
+            font-weight: 600;
+            margin-left: 0.5rem;
+            color: #c57a5c;
+            cursor: default;
+        }
+    }
+}
