@@ -6,24 +6,22 @@ import SignupPage from './pages/SignupPage/SignupPage'
 
 import 'react-toastify/dist/ReactToastify.css';
 import './App.scss'
-import { UserProvider } from './contexts/UserContext'
+import SessionPage from './pages/SessionPage/SessionPage'
 
 function App() {
 
-
   return (
-    <UserProvider>
-      <div className="App">
-        <ToastContainer position='top-center' theme='colored' />
-        <BrowserRouter>
-          <Routes>
-            <Route path='/' element={<HomePage />} />
-            <Route path='/login' element={<LoginPage />} />
-            <Route path='/signup' element={<SignupPage />} />
-          </Routes>
-        </BrowserRouter>
-      </div>
-    </UserProvider>
+    <div className="App">
+      <ToastContainer position='top-center' theme='colored' />
+      <BrowserRouter>
+        <Routes>
+          <Route path='/' element={<HomePage />} />
+          <Route path='/login' element={<LoginPage />} />
+          <Route path='/signup' element={<SignupPage />} />
+          <Route path='/session' element={<SessionPage />} />
+        </Routes>
+      </BrowserRouter>
+    </div>
   )
 }
 

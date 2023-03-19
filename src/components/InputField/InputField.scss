@@ -1,4 +1,5 @@
 .input {
+    font-family: "Poppins", sans-serif;
     position: relative;
     display: flex;
     flex-direction: column;
@@ -19,10 +20,12 @@
         border-radius: 0.8rem;
         outline: none;
         padding: 1.1rem 0.8rem 1.1rem 1.6rem;
+        font-family: "Poppins", sans-serif;
         font-size: 1.4rem;
         color: #373535;
         font-weight: 400;
         &::placeholder {
+            font-family: "Poppins", sans-serif;
             opacity: 0.4;
         }
     }

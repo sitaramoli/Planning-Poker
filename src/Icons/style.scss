@@ -1,20 +1,21 @@
 @import "./variables";
 
 @font-face {
-  font-family: '#{$icomoon-font-family}';
-  src:  url('#{$icomoon-font-path}/#{$icomoon-font-family}.eot?783fox');
-  src:  url('#{$icomoon-font-path}/#{$icomoon-font-family}.eot?783fox#iefix') format('embedded-opentype'),
-    url('#{$icomoon-font-path}/#{$icomoon-font-family}.ttf?783fox') format('truetype'),
-    url('#{$icomoon-font-path}/#{$icomoon-font-family}.woff?783fox') format('woff'),
-    url('#{$icomoon-font-path}/#{$icomoon-font-family}.svg?783fox##{$icomoon-font-family}') format('svg');
+  font-family: "#{$icomoon-font-family}";
+  src: url("#{$icomoon-font-path}/#{$icomoon-font-family}.eot?783fox");
+  src: url("#{$icomoon-font-path}/#{$icomoon-font-family}.eot?783fox#iefix") format("embedded-opentype"),
+    url("#{$icomoon-font-path}/#{$icomoon-font-family}.ttf?783fox") format("truetype"),
+    url("#{$icomoon-font-path}/#{$icomoon-font-family}.woff?783fox") format("woff"),
+    url("#{$icomoon-font-path}/#{$icomoon-font-family}.svg?783fox##{$icomoon-font-family}") format("svg");
   font-weight: normal;
   font-style: normal;
   font-display: block;
 }
 
-[class^="icon-"], [class*=" icon-"] {
+[class^="icon-"],
+[class*=" icon-"] {
   /* use !important to prevent issues with browser extensions that change fonts */
-  font-family: '#{$icomoon-font-family}' !important;
+  font-family: "#{$icomoon-font-family}" !important;
   speak: never;
   font-style: normal;
   font-weight: normal;
@@ -29,37 +30,51 @@
 
 .icon-add-task {
   &:before {
-    content: $icon-add-task; 
+    content: $icon-add-task;
   }
 }
 .icon-close {
   &:before {
-    content: $icon-close; 
+    content: $icon-close;
   }
 }
 .icon-logout {
   &:before {
-    content: $icon-logout; 
+    content: $icon-logout;
   }
 }
 .icon-person-add {
   &:before {
-    content: $icon-person-add; 
+    content: $icon-person-add;
   }
 }
 .icon-reset {
   &:before {
-    content: $icon-reset; 
+    content: $icon-reset;
   }
 }
 .icon-visibility-off {
   &:before {
-    content: $icon-visibility-off; 
+    content: $icon-visibility-off;
   }
 }
 .icon-visibility-on {
   &:before {
-    content: $icon-visibility-on; 
+    content: $icon-visibility-on;
   }
 }
-
+.icon-groups {
+  &:before {
+    content: $icon-groups;
+  }
+}
+.icon-accept {
+  &:before {
+    content: $icon-accept; 
+  }
+}
+.icon-reject {
+  &:before {
+    content: $icon-reject; 
+  }
+}

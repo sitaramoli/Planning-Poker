@@ -15,8 +15,8 @@ const useSignup = () => {
      * goto home page if already authenticated
      */
     useEffect(() => {
-        if (window.localStorage.getItem("authenticated")) {
-            navigate('/');
+        if (window.localStorage.getItem("user")) {
+            navigate('/', { replace: true });
         }
     }, [])
 
@@ -64,20 +64,20 @@ const useSignup = () => {
             const data = response.data;
             if (data.success === 1) {
                 toast.success(data.message);
-                navigate('/login');
+                navigate('/login', { replace: true });
             }
             else {
                 toast.error(data.message);
             }
         } catch (error) {
-            toast.error(error.toJSON().message);
+            toast.error(error.message);
         } finally {
             setLoading(false);
         }
     }
 
 
-    return {formErrors, loading, formData, onInputChange, handleFormSubmit, passwordVisible, onPasswordVisibilityChange, confirmVisible, onConfirmVisibilityChange };
+    return { formErrors, loading, formData, onInputChange, handleFormSubmit, passwordVisible, onPasswordVisibilityChange, confirmVisible, onConfirmVisibilityChange };
 }
 
 export default useSignup;

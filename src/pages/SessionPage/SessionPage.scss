@@ -1,0 +1,241 @@
+.session {
+    width: 100%;
+    min-height: 100vh;
+    background-color: #fff;
+    color: black;
+    &__participantsContainer {
+        position: relative;
+        &__button {
+            position: relative;
+            border: none;
+            background-color: transparent;
+            & i {
+                font-size: 4.4rem;
+                color: #c57a5c;
+            }
+            & span {
+                display: block;
+                position: absolute;
+                top: 0;
+                right: 0;
+                padding: 0.1rem 0.6rem;
+                background-color: #373535;
+                border-radius: 0.8rem;
+                font-family: "Poppins", sans-serif;
+                font-size: 1.4rem;
+                font-weight: 500;
+            }
+        }
+    }
+    &__body {
+        display: flex;
+        justify-content: space-between;
+        // display: grid;
+        // grid-template-areas: 'a m s';
+    }
+    &__actions {
+        // grid-area: a;
+        display: flex;
+        flex-direction: column;
+        padding: 0;
+        background-color: #c57a5c;
+        width: fit-content;
+        // min-height: 100vh;
+        &__button {
+            display: flex;
+            padding: 1rem 2rem;
+            gap: 1.5rem;
+            align-items: center;
+            background-color: #c57a5c;
+            border: none;
+            font-family: "Poppins", sans-serif;
+            font-size: 1.4rem;
+            font-weight: 400;
+            &:hover {
+                background-color: #c78d76;
+            }
+            & i {
+                font-size: 2.4rem;
+            }
+        }
+    }
+    &__main {
+        min-height: 50rem;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: space-between;
+        padding: 1rem;
+        &__membersPointCards {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1rem;
+            & .membersPointCard {
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                & p {
+                    font-size: 1.4rem;
+                    font-weight: 400;
+                    color: #373535;
+                }
+            }
+        }
+        &__pointCards {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 1rem;
+        }
+    }
+    &__storyboardContainer {
+        // grid-area: s;
+        display: flex;
+        flex-direction: column;
+        max-width: 32.2rem;
+        width: 100%;
+        border-left: 0.1rem solid #f2f2f2;
+        & .storyboard__stories {
+            padding: 1rem;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 1rem;
+            height: 100%;
+            & .storyboard__title {
+                font-size: 1.6rem;
+                font-weight: 600;
+                color: #c57a5c;
+            }
+            & .storyTable {
+                width: 100%;
+                border-collapse: collapse;
+                &__head {
+                    font-size: 1.4rem;
+                    & th {
+                        padding: 1rem 0;
+                        border-bottom: 0.1rem solid #373535;
+                    }
+                }
+                &__body {
+                    font-size: 1.4rem;
+                    & tr {
+                        text-align: center;
+                        & td {
+                            padding: 1rem 0;
+                            border-bottom: 0.1rem solid #373535;
+                        }
+                    }
+                    & .active {
+                        background-color: #5cc586;
+                    }
+                }
+            }
+        }
+        & .storyboard__actions {
+            display: flex;
+            flex-direction: column;
+            gap: 3.8rem;
+            background-color: #f2f2f2;
+            padding: 3.8rem 3.4rem 1.5rem 3.8rem;
+            align-items: center;
+            &__storyActions {
+                display: flex;
+                justify-content: space-between;
+                width: 100%;
+            }
+            &__addStory {
+                display: flex;
+                gap: 1rem;
+                align-items: center;
+                background-color: #c57a5c;
+                padding: 0.55rem 0.5rem;
+                border: none;
+                border-radius: 0.8rem;
+                width: fit-content;
+                font-family: "Poppins", sans-serif;
+                font-size: 1.5rem;
+                font-weight: 400;
+                & i {
+                    font-size: 2.4rem;
+                }
+            }
+        }
+    }
+}
+
+.participants {
+    background-color: #373535;
+    color: #fff;
+    position: absolute;
+    top: 100%;
+    right: 0;
+    font-size: 1.6rem;
+    font-weight: 400;
+    border-radius: 0.8rem;
+    width: 20rem;
+    & div {
+        padding: 1rem;
+        &:not(:last-child) {
+            border-bottom: 0.1rem solid #fff;
+        }
+    }
+}
+
+.button {
+    padding: 0.5rem;
+    border-radius: 0.8rem;
+    border: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    & i {
+        font-size: 2.4rem;
+    }
+    &--accept {
+        background-color: #5cc586;
+    }
+    &--reject {
+        background-color: #ee6c64;
+    }
+}
+
+.addStoryForm {
+    background-color: #fff;
+    border-radius: 0.8rem;
+    padding: 2rem;
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    align-items: center;
+    &__title {
+        font-size: 2rem;
+        font-weight: 600;
+        color: #c57a5c;
+    }
+    &__button {
+        padding: 1rem;
+        width: 100%;
+        background-color: #c57a5c;
+        border-radius: 0.8rem;
+        border: none;
+        font-family: "Poppins", sans-serif;
+        font-size: 1.4rem;
+        font-weight: 400;
+    }
+}
+
+.storyModal {
+    background-color: #fff;
+    border-radius: 0.8rem;
+    padding: 2rem;
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    align-items: center;
+    &__title {
+        font-size: 2rem;
+        font-weight: 600;
+        color: #c57a5c;
+    }
+}

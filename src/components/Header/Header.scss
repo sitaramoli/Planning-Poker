@@ -1,0 +1,77 @@
+.header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 2.2rem 4rem;
+    background-color: #f2f2f2;
+    &__title {
+        font-family: "Poppins", sans-serif;
+        font-size: 4rem;
+        font-weight: 700;
+        color: #c57a5c;
+    }
+    &__actions {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 3rem;
+        &__profile {
+            position: relative;
+            background-color: #373535;
+            color: #fff;
+            border-radius: 50%;
+            &__avatar {
+                font-size: 2rem;
+                cursor: pointer;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                height: 5rem;
+                width: 5rem;
+            }
+            &__details {
+                position: absolute;
+                background-color: #fff;
+                border: 0.1rem solid #373535;
+                box-shadow: 0 0 1rem #373535;
+                border-radius: 0.8rem;
+                top: 100%;
+                right: 50%;
+                transform: translate(30%, 5%);
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+                gap: 1rem;
+                padding: 1rem;
+                &__name {
+                    font-size: 2rem;
+                    font-weight: 600;
+                    color: #373535;
+                }
+                &__email {
+                    font-size: 1.5rem;
+                    font-weight: 500;
+                    color: #373535;
+                }
+                &__logout {
+                    width: 100%;
+                    background-color: #c57a5c;
+                    font-size: 1.5rem;
+                    color: #fff;
+                    font-family: "Poppins", sans-serif;
+                    border: none;
+                    border-radius: 0.8rem;
+                    padding: 0.5rem;
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    gap: 0.8rem;
+                    & i {
+                        font-size: 1.5rem;
+                    }
+                }
+            }
+        }
+    }
+}

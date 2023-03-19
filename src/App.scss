@@ -1,6 +1,10 @@
-.App{
+.App {
     min-height: 100vh;
     display: flex;
     justify-content: center;
     align-items: center;
+}
+
+.Toastify__toast-body {
+    font-size: 2rem;
 }

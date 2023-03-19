@@ -1,0 +1,40 @@
+.textarea {
+    font-family: "Poppins", sans-serif;
+    display: flex;
+    flex-direction: column;
+    align-self: flex-start;
+    width: 100%;
+    gap: 0.6rem;
+    &__label {
+        font-size: 1.2rem;
+        font-weight: 700;
+        color: #373535;
+        text-transform: uppercase;
+    }
+    & textarea {
+        background-color: #fcfdfe;
+        border: 0.1rem solid #373535;
+        border-radius: 0.8rem;
+        outline: none;
+        padding: 1.1rem 0.8rem 1.1rem 1.6rem;
+        font-family: "Poppins", sans-serif;
+        font-size: 1.4rem;
+        color: #373535;
+        font-weight: 400;
+        resize: none;
+        &::placeholder {
+            font-family: "Poppins", sans-serif;
+            opacity: 0.4;
+        }
+    }
+    &__errorMessage {
+        color: #db2d2d;
+        font-size: 1.2rem;
+        font-weight: 400;
+        display: none;
+    }
+
+    & textarea:invalid ~ &__errorMessage {
+        display: block;
+    }
+}

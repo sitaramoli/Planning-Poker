@@ -1,0 +1,43 @@
+.card {
+    cursor: default;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 0.8rem;
+    padding: 2rem;
+    font-family: "Poppins", sans-serif;
+    font-size: 4rem;
+    font-weight: 700;
+    min-width: 8rem;
+    max-width: 7.5rem;
+    min-height: 10rem;
+    background-color: #373535;
+    &--white {
+        border: 0.1rem solid #373535;
+        background-color: #fff;
+        color: #373535;
+    }
+    &--blue {
+        border: 0.1rem solid #609cf6;
+        background-color: #609cf6;
+        color: #fff;
+    }
+    &--green {
+        border: 0.1rem solid #5cc586;
+        background-color: #5cc586;
+        color: #fff;
+    }
+    &--yellow {
+        border: 0.1rem solid #dbb554;
+        background-color: #dbb554;
+        color: #fff;
+    }
+    &--pink {
+        border: 0.1rem solid #c24086;
+        background-color: #c24086;
+        color: #fff;
+    }
+    &--active {
+        transform: translateY(-30%);
+    }
+}

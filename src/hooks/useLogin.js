@@ -11,12 +11,10 @@ const useLogin = () => {
     const navigate = useNavigate();
 
 
-    /**
-     * goto home page if already authenticated
-     */
+    // Check if user has already logged in
     useEffect(() => {
-        if (window.localStorage.getItem("authenticated")) {
-            navigate('/');
+        if (window.localStorage.getItem("user")) {
+            navigate('/', { replace: true });
         }
     }, [])
 
@@ -44,11 +42,11 @@ const useLogin = () => {
             return;
         }
         else {
+            setFormErrors({});
             login();
         }
 
     }
-
 
     const login = async () => {
         setLoading(true);
@@ -56,15 +54,14 @@ const useLogin = () => {
             const response = await axios.post("http://127.0.0.1/poker_planning/login", formData);
             const data = response.data;
             if (data.success === 1) {
-                window.localStorage.setItem("authenticated", true);
                 window.localStorage.setItem("user", JSON.stringify(data.data));
-                navigate('/');
+                navigate('/', { replace: true });
             }
             else {
                 toast.error(data.message);
             }
         } catch (error) {
-            toast.error(error.toJSON().message);
+            toast.error(error.message);
         } finally {
             setLoading(false);
 

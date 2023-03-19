@@ -11,7 +11,7 @@ const LoginPage = () => {
 
     const navigate = useNavigate();
     const signupRoute = () => {
-        navigate('/signup');
+        navigate('/signup', { replace: true });
     }
 
     const { loading, formData, visible, onVisibilityChange, onInputChange, handleFormSubmit, formErrors } = useLogin();

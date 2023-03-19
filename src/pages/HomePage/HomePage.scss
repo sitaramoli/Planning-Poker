@@ -1,5 +1,67 @@
-.home{
+.home {
     background-color: #fff;
     padding: 2rem;
     font-size: 2rem;
+    width: 100vw;
+    min-height: 100vh;
+    &__sessionButton {
+        border: none;
+        border-radius: 0.8rem;
+        display: flex;
+        gap: 1rem;
+        padding: 0.55rem 0.5rem;
+        justify-content: center;
+        align-items: center;
+        background-color: #c57a5c;
+        font-family: "Poppins", sans-serif;
+        font-size: 1.5rem;
+        font-weight: 400;
+        color: #fff;
+        flex: 1 1 auto;
+        height: fit-content;
+        cursor: pointer;
+        & i {
+            font-size: 2.4rem;
+        }
+    }
+    &__history {
+        display: flex;
+        flex-direction: column;
+        gap: 2rem;
+        padding: 1rem 4rem;
+        &__title {
+            font-family: "Poppins", sans-serif;
+            font-size: 2rem;
+            font-weight: 600;
+            color: #c57a5c;
+        }
+    }
+}
+
+.sessionForm {
+    padding: 2rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 2rem;
+    background-color: #fff;
+    border-radius: 0.8rem;
+    &__title {
+        padding: 0 8rem;
+        font-size: 2rem;
+        font-weight: 600;
+        color: #c57a5c;
+    }
+    &__submitButton {
+        padding: 1.5rem 2.4rem;
+        font-family: "Poppins", sans-serif;
+        font-size: 1.6rem;
+        font-weight: 600;
+        line-height: 1.25;
+        background-color: #c57a5c;
+        color: #fff;
+        width: 100%;
+        border-radius: 0.8rem;
+        border: none;
+    }
 }
