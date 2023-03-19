@@ -75,7 +75,7 @@ const SessionPage = () => {
         <>
 
             {user && <div className='session'>
-                <Header title={sessionInfoRef?.name} handleLogout={logout} user={user} >
+                <Header title={sessionInfoRef.current?.name} handleLogout={logout} user={user} >
                     <div className="session__participantsContainer">
                         <button onClick={handleParticipantsButtonClick} className='session__participantsContainer__button' >
                             <i className="icon-groups"></i>
