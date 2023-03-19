@@ -49,7 +49,7 @@ const SessionPage = () => {
             navigate('/login');
         }
         else {
-            if (!moderator && !member) {
+            if (!moderator) {
                 joinSession(user.id, id);
             }
             getSessionInfo(id);
@@ -62,7 +62,6 @@ const SessionPage = () => {
                 getStoryPoints();
                 if (sessionInfoRef.current?.status == 'closed') {
                     toast.error('Session is closed by the moderator');
-                    window.localStorage.removeItem("member");
                     navigate('/', { replace: true });
                 }
             }, 5000);

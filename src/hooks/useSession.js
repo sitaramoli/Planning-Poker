@@ -152,10 +152,7 @@ const useSession = () => {
                 { "user_id": user_id, "session_id": session_id });
 
             const data = response.data;
-            if (data.success === 1) {
-                window.localStorage.setItem("member", true)
-            }
-            else {
+            if (data.success === 0) {
                 toast.error(data.message);
                 navigate('/', { replace: true });
             }

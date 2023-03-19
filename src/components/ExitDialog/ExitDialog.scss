@@ -1,0 +1,21 @@
+.exitDialog {
+    display: flex;
+    flex-direction: column;
+    background-color: #fff;
+    gap: 2rem;
+    &__title {
+        font-size: 3rem;
+        font-weight: 600;
+        color: #f04040;
+    }
+    &__message {
+        font-size: 2rem;
+        font-weight: 500;
+        color: #000;
+    }
+    &__actionsContainer {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+}

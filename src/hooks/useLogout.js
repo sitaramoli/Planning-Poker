@@ -5,7 +5,6 @@ const useLogout = () => {
     const logout = () => {
         window.localStorage.removeItem("user");
         window.localStorage.removeItem("moderator");
-        window.localStorage.removeItem("member");
         navigate('/login', { replace: true });
     }
 
