@@ -153,7 +153,6 @@ const useSession = () => {
 
             const data = response.data;
             if (data.success === 1) {
-                toast.success(data.message);
                 window.localStorage.setItem("member", true)
             }
             else {
