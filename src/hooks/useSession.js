@@ -9,12 +9,14 @@ const useSession = () => {
 
     /*** Add Story***/
     const [formData, setFormData] = useState({ story: '', description: '' });
+    const [formErrors, setFormErrors] = useState({});
     const onInputChange = (e) => {
         const { name, value } = e.target;
         setFormData({ ...formData, [name]: value });
     }
     const [showAddStory, setShowAddStory] = useState(false);
     const handleAddStoryClick = () => {
+        setFormErrors({});
         if (!moderator) {
             toast.error('You don\'t have access');
         }
@@ -26,16 +28,24 @@ const useSession = () => {
         }
     }
     const handleFormSubmit = () => {
+        let errors = {};
         if (!formData.story) {
-            toast.error('Story field is required');
-            return;
+            errors.story = 'Story field is required';
         }
         if (!formData.description) {
-            toast.error('Story Description is required');
+            errors.description = 'Description field is required';
+        }
+
+        setFormErrors(errors);
+        if (Object.keys(errors).length > 0) {
             return;
         }
-        addStory();
-        setFormData({});
+        else {
+            handleAddStoryClick();
+            setFormErrors({});
+            addStory();
+            setFormData({});
+        }
     }
     const addStory = async () => {
 
@@ -325,7 +335,7 @@ const useSession = () => {
     return {
         storyPoints, getStoryPoints, acceptStoryPoints, voteStoryPoints, getStories, joinSession,
         inviteMembers, stories, showParticipants, handleParticipantsButtonClick,
-        onInputChange, handleFormSubmit, showAddStory, handleAddStoryClick, formData, closeSession,
+        onInputChange, handleFormSubmit, formErrors, showAddStory, handleAddStoryClick, formData, closeSession,
         revealStoryPoints, resetStoryPoints, getParticipants, participants, activeStoryRef, sessionInfoRef, getSessionInfo
     };
 }

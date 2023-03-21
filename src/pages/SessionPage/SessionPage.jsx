@@ -25,13 +25,12 @@ const SessionPage = () => {
     const { activeStoryRef, sessionInfoRef, voteStoryPoints, acceptStoryPoints, getStories,
         inviteMembers, stories, joinSession, participants,
         showParticipants, handleParticipantsButtonClick, getParticipants, onInputChange,
-        handleFormSubmit, showAddStory, handleAddStoryClick, formData, resetStoryPoints,
+        handleFormSubmit, showAddStory, handleAddStoryClick, formData, formErrors, resetStoryPoints,
         revealStoryPoints, closeSession, storyPoints, getStoryPoints, getSessionInfo } = useSession();
     /*** useSession Hook END ***/
 
     const user = JSON.parse(window.localStorage.getItem("user"));
     const moderator = window.localStorage.getItem("moderator");
-    const member = window.localStorage.getItem("member");
 
 
     const { logout } = useLogout();
@@ -90,7 +89,7 @@ const SessionPage = () => {
 
                     <SessionMain activeStory={activeStoryRef.current} activeCard={activeCard} onCardSelect={onCardSelect} storyList={stories} storyPoints={storyPoints} voteStoryPoints={voteStoryPoints} user_id={user.id} />
 
-                    <SessionStoryboard resetStoryPoints={resetStoryPoints} acceptStoryPoints={acceptStoryPoints} storyList={stories} user_id={user.id} showAddStory={showAddStory} handleAddStoryClick={handleAddStoryClick} onInputChange={onInputChange} formData={formData} handleFormSubmit={handleFormSubmit} />
+                    <SessionStoryboard resetStoryPoints={resetStoryPoints} acceptStoryPoints={acceptStoryPoints} storyList={stories} user_id={user.id} showAddStory={showAddStory} handleAddStoryClick={handleAddStoryClick} onInputChange={onInputChange} formData={formData} handleFormSubmit={handleFormSubmit} formErrors={formErrors} />
                 </div>
             </div>}
         </>
@@ -160,7 +159,7 @@ const SessionMain = ({ storyPoints, storyList, activeCard, onCardSelect, activeS
 
 
 /*** Storyboard Section ***/
-const SessionStoryboard = ({ resetStoryPoints, acceptStoryPoints, storyList, showAddStory, handleAddStoryClick, onInputChange, formData, handleFormSubmit }) => {
+const SessionStoryboard = ({ resetStoryPoints, acceptStoryPoints, storyList, showAddStory, handleAddStoryClick, onInputChange, formData, handleFormSubmit, formErrors }) => {
 
     const [showStoryModal, setShowStoryModal] = useState(false);
     const [activeStory, setActiveStory] = useState({});
@@ -213,12 +212,9 @@ const SessionStoryboard = ({ resetStoryPoints, acceptStoryPoints, storyList, sho
                 {showAddStory && <Modal handleClose={handleAddStoryClick} show={showAddStory} >
                     <form className="addStoryForm">
                         <p className="addStoryForm__title">Add New Story</p>
-                        <InputField label={'Story'} onChange={onInputChange} value={formData.name} type={'text'} name={'story'} placeholder={'Story'} required={true} />
-                        <Textarea label={'Description'} name={'description'} placeholder={'Story Description'} value={formData.description} onChange={onInputChange} required={true} />
-                        <button className="addStoryForm__button" type='button' onClick={() => {
-                            handleFormSubmit();
-                            handleAddStoryClick();
-                        }} >Add</button>
+                        <InputField errorMessage={formErrors.story} label={'Story'} onChange={onInputChange} value={formData.name} type={'text'} name={'story'} placeholder={'Story'} required={true} />
+                        <Textarea errorMessage={formErrors.description} label={'Description'} name={'description'} placeholder={'Story Description'} value={formData.description} onChange={onInputChange} required={true} />
+                        <button className="addStoryForm__button" type='button' onClick={handleFormSubmit} >Add</button>
                     </form>
                 </Modal>}
 
